@@ -1,0 +1,469 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		988F50B3169B72CA005E0674 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 988F50B2169B72CA005E0674 /* UIKit.framework */; };
+		988F50B5169B72CA005E0674 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 988F50B4169B72CA005E0674 /* Foundation.framework */; };
+		988F50B7169B72CA005E0674 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 988F50B6169B72CA005E0674 /* CoreGraphics.framework */; };
+		988F50B9169B72CA005E0674 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 988F50B8169B72CA005E0674 /* CoreData.framework */; };
+		988F50BF169B72CA005E0674 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 988F50BD169B72CA005E0674 /* InfoPlist.strings */; };
+		988F50C1169B72CA005E0674 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 988F50C0169B72CA005E0674 /* main.m */; };
+		988F50C5169B72CA005E0674 /* YkChessAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 988F50C4169B72CA005E0674 /* YkChessAppDelegate.m */; };
+		988F50C7169B72CA005E0674 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 988F50C6169B72CA005E0674 /* Default.png */; };
+		988F50C9169B72CA005E0674 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 988F50C8169B72CA005E0674 /* Default@2x.png */; };
+		988F50CB169B72CA005E0674 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 988F50CA169B72CA005E0674 /* Default-568h@2x.png */; };
+		988F50CE169B72CA005E0674 /* Chesster.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 988F50CC169B72CA005E0674 /* Chesster.xcdatamodeld */; };
+		988F50D6169B72CA005E0674 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 988F50D5169B72CA005E0674 /* SenTestingKit.framework */; };
+		988F50D7169B72CA005E0674 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 988F50B2169B72CA005E0674 /* UIKit.framework */; };
+		988F50D8169B72CA005E0674 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 988F50B4169B72CA005E0674 /* Foundation.framework */; };
+		988F50D9169B72CA005E0674 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 988F50B8169B72CA005E0674 /* CoreData.framework */; };
+		988F50E1169B72CA005E0674 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 988F50DF169B72CA005E0674 /* InfoPlist.strings */; };
+		988F50E4169B72CA005E0674 /* ChessterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 988F50E3169B72CA005E0674 /* ChessterTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		988F50DA169B72CA005E0674 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 988F50A5169B72CA005E0674 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 988F50AD169B72CA005E0674;
+			remoteInfo = Chesster;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		988F50AE169B72CA005E0674 /* Chesster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chesster.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		988F50B2169B72CA005E0674 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		988F50B4169B72CA005E0674 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		988F50B6169B72CA005E0674 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		988F50B8169B72CA005E0674 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		988F50BC169B72CA005E0674 /* Chesster-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Chesster-Info.plist"; sourceTree = "<group>"; };
+		988F50BE169B72CA005E0674 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		988F50C0169B72CA005E0674 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		988F50C2169B72CA005E0674 /* Chesster-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Chesster-Prefix.pch"; sourceTree = "<group>"; };
+		988F50C3169B72CA005E0674 /* YkChessAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YkChessAppDelegate.h; sourceTree = "<group>"; };
+		988F50C4169B72CA005E0674 /* YkChessAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YkChessAppDelegate.m; sourceTree = "<group>"; };
+		988F50C6169B72CA005E0674 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		988F50C8169B72CA005E0674 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		988F50CA169B72CA005E0674 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		988F50CD169B72CA005E0674 /* Chesster.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Chesster.xcdatamodel; sourceTree = "<group>"; };
+		988F50D4169B72CA005E0674 /* ChessterTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChessterTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		988F50D5169B72CA005E0674 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		988F50DE169B72CA005E0674 /* ChessterTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ChessterTests-Info.plist"; sourceTree = "<group>"; };
+		988F50E0169B72CA005E0674 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		988F50E2169B72CA005E0674 /* ChessterTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChessterTests.h; sourceTree = "<group>"; };
+		988F50E3169B72CA005E0674 /* ChessterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChessterTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		988F50AB169B72CA005E0674 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				988F50B3169B72CA005E0674 /* UIKit.framework in Frameworks */,
+				988F50B5169B72CA005E0674 /* Foundation.framework in Frameworks */,
+				988F50B7169B72CA005E0674 /* CoreGraphics.framework in Frameworks */,
+				988F50B9169B72CA005E0674 /* CoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		988F50D0169B72CA005E0674 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				988F50D6169B72CA005E0674 /* SenTestingKit.framework in Frameworks */,
+				988F50D7169B72CA005E0674 /* UIKit.framework in Frameworks */,
+				988F50D8169B72CA005E0674 /* Foundation.framework in Frameworks */,
+				988F50D9169B72CA005E0674 /* CoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		988F50A3169B72CA005E0674 = {
+			isa = PBXGroup;
+			children = (
+				988F50BA169B72CA005E0674 /* Chesster */,
+				988F50DC169B72CA005E0674 /* ChessterTests */,
+				988F50B1169B72CA005E0674 /* Frameworks */,
+				988F50AF169B72CA005E0674 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		988F50AF169B72CA005E0674 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				988F50AE169B72CA005E0674 /* Chesster.app */,
+				988F50D4169B72CA005E0674 /* ChessterTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		988F50B1169B72CA005E0674 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				988F50B2169B72CA005E0674 /* UIKit.framework */,
+				988F50B4169B72CA005E0674 /* Foundation.framework */,
+				988F50B6169B72CA005E0674 /* CoreGraphics.framework */,
+				988F50B8169B72CA005E0674 /* CoreData.framework */,
+				988F50D5169B72CA005E0674 /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		988F50BA169B72CA005E0674 /* Chesster */ = {
+			isa = PBXGroup;
+			children = (
+				988F50C3169B72CA005E0674 /* YkChessAppDelegate.h */,
+				988F50C4169B72CA005E0674 /* YkChessAppDelegate.m */,
+				988F50CC169B72CA005E0674 /* Chesster.xcdatamodeld */,
+				988F50BB169B72CA005E0674 /* Supporting Files */,
+			);
+			path = Chesster;
+			sourceTree = "<group>";
+		};
+		988F50BB169B72CA005E0674 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				988F50BC169B72CA005E0674 /* Chesster-Info.plist */,
+				988F50BD169B72CA005E0674 /* InfoPlist.strings */,
+				988F50C0169B72CA005E0674 /* main.m */,
+				988F50C2169B72CA005E0674 /* Chesster-Prefix.pch */,
+				988F50C6169B72CA005E0674 /* Default.png */,
+				988F50C8169B72CA005E0674 /* Default@2x.png */,
+				988F50CA169B72CA005E0674 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		988F50DC169B72CA005E0674 /* ChessterTests */ = {
+			isa = PBXGroup;
+			children = (
+				988F50E2169B72CA005E0674 /* ChessterTests.h */,
+				988F50E3169B72CA005E0674 /* ChessterTests.m */,
+				988F50DD169B72CA005E0674 /* Supporting Files */,
+			);
+			path = ChessterTests;
+			sourceTree = "<group>";
+		};
+		988F50DD169B72CA005E0674 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				988F50DE169B72CA005E0674 /* ChessterTests-Info.plist */,
+				988F50DF169B72CA005E0674 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		988F50AD169B72CA005E0674 /* Chesster */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 988F50E7169B72CA005E0674 /* Build configuration list for PBXNativeTarget "Chesster" */;
+			buildPhases = (
+				988F50AA169B72CA005E0674 /* Sources */,
+				988F50AB169B72CA005E0674 /* Frameworks */,
+				988F50AC169B72CA005E0674 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Chesster;
+			productName = Chesster;
+			productReference = 988F50AE169B72CA005E0674 /* Chesster.app */;
+			productType = "com.apple.product-type.application";
+		};
+		988F50D3169B72CA005E0674 /* ChessterTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 988F50EA169B72CA005E0674 /* Build configuration list for PBXNativeTarget "ChessterTests" */;
+			buildPhases = (
+				988F50CF169B72CA005E0674 /* Sources */,
+				988F50D0169B72CA005E0674 /* Frameworks */,
+				988F50D1169B72CA005E0674 /* Resources */,
+				988F50D2169B72CA005E0674 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				988F50DB169B72CA005E0674 /* PBXTargetDependency */,
+			);
+			name = ChessterTests;
+			productName = ChessterTests;
+			productReference = 988F50D4169B72CA005E0674 /* ChessterTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		988F50A5169B72CA005E0674 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = YkChess;
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = Yaks;
+			};
+			buildConfigurationList = 988F50A8169B72CA005E0674 /* Build configuration list for PBXProject "Chesster" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 988F50A3169B72CA005E0674;
+			productRefGroup = 988F50AF169B72CA005E0674 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				988F50AD169B72CA005E0674 /* Chesster */,
+				988F50D3169B72CA005E0674 /* ChessterTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		988F50AC169B72CA005E0674 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				988F50BF169B72CA005E0674 /* InfoPlist.strings in Resources */,
+				988F50C7169B72CA005E0674 /* Default.png in Resources */,
+				988F50C9169B72CA005E0674 /* Default@2x.png in Resources */,
+				988F50CB169B72CA005E0674 /* Default-568h@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		988F50D1169B72CA005E0674 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				988F50E1169B72CA005E0674 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		988F50D2169B72CA005E0674 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		988F50AA169B72CA005E0674 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				988F50C1169B72CA005E0674 /* main.m in Sources */,
+				988F50C5169B72CA005E0674 /* YkChessAppDelegate.m in Sources */,
+				988F50CE169B72CA005E0674 /* Chesster.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		988F50CF169B72CA005E0674 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				988F50E4169B72CA005E0674 /* ChessterTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		988F50DB169B72CA005E0674 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 988F50AD169B72CA005E0674 /* Chesster */;
+			targetProxy = 988F50DA169B72CA005E0674 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		988F50BD169B72CA005E0674 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				988F50BE169B72CA005E0674 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		988F50DF169B72CA005E0674 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				988F50E0169B72CA005E0674 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		988F50E5169B72CA005E0674 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		988F50E6169B72CA005E0674 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		988F50E8169B72CA005E0674 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Chesster/Chesster-Prefix.pch";
+				INFOPLIST_FILE = "Chesster/Chesster-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		988F50E9169B72CA005E0674 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Chesster/Chesster-Prefix.pch";
+				INFOPLIST_FILE = "Chesster/Chesster-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		988F50EB169B72CA005E0674 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Chesster.app/Chesster";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Chesster/Chesster-Prefix.pch";
+				INFOPLIST_FILE = "ChessterTests/ChessterTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		988F50EC169B72CA005E0674 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Chesster.app/Chesster";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Chesster/Chesster-Prefix.pch";
+				INFOPLIST_FILE = "ChessterTests/ChessterTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		988F50A8169B72CA005E0674 /* Build configuration list for PBXProject "Chesster" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				988F50E5169B72CA005E0674 /* Debug */,
+				988F50E6169B72CA005E0674 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		988F50E7169B72CA005E0674 /* Build configuration list for PBXNativeTarget "Chesster" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				988F50E8169B72CA005E0674 /* Debug */,
+				988F50E9169B72CA005E0674 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		988F50EA169B72CA005E0674 /* Build configuration list for PBXNativeTarget "ChessterTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				988F50EB169B72CA005E0674 /* Debug */,
+				988F50EC169B72CA005E0674 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		988F50CC169B72CA005E0674 /* Chesster.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				988F50CD169B72CA005E0674 /* Chesster.xcdatamodel */,
+			);
+			currentVersion = 988F50CD169B72CA005E0674 /* Chesster.xcdatamodel */;
+			path = Chesster.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 988F50A5169B72CA005E0674 /* Project object */;
+}
