@@ -24,6 +24,19 @@
 		988F50D9169B72CA005E0674 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 988F50B8169B72CA005E0674 /* CoreData.framework */; };
 		988F50E1169B72CA005E0674 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 988F50DF169B72CA005E0674 /* InfoPlist.strings */; };
 		988F50E4169B72CA005E0674 /* ChessterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 988F50E3169B72CA005E0674 /* ChessterTests.m */; };
+		988F50EF169B7369005E0674 /* YkChessGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 988F50EE169B7369005E0674 /* YkChessGame.m */; };
+		988F50F6169B7980005E0674 /* YkChessMove.m in Sources */ = {isa = PBXBuildFile; fileRef = 988F50F5169B7980005E0674 /* YkChessMove.m */; };
+		988F50F9169B82A6005E0674 /* YkChessPiece.m in Sources */ = {isa = PBXBuildFile; fileRef = 988F50F8169B82A6005E0674 /* YkChessPiece.m */; };
+		988F50FC169B8903005E0674 /* YkChessBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = 988F50FB169B8903005E0674 /* YkChessBoard.m */; };
+		988F50FF169B8B04005E0674 /* YkChessSquare.m in Sources */ = {isa = PBXBuildFile; fileRef = 988F50FE169B8B04005E0674 /* YkChessSquare.m */; };
+		988F5102169B9751005E0674 /* YkChessGraphic.m in Sources */ = {isa = PBXBuildFile; fileRef = 988F5101169B9751005E0674 /* YkChessGraphic.m */; };
+		988F5106169B9E61005E0674 /* YkChessPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 988F5105169B9E60005E0674 /* YkChessPlayer.m */; };
+		988F5109169BD03B005E0674 /* YkChessPiecePawn.m in Sources */ = {isa = PBXBuildFile; fileRef = 988F5108169BD03B005E0674 /* YkChessPiecePawn.m */; };
+		988F510C169CF335005E0674 /* YkChessPieceKnight.m in Sources */ = {isa = PBXBuildFile; fileRef = 988F510B169CF335005E0674 /* YkChessPieceKnight.m */; };
+		988F5112169D09EE005E0674 /* YkChessPieceRook.m in Sources */ = {isa = PBXBuildFile; fileRef = 988F5111169D09EE005E0674 /* YkChessPieceRook.m */; };
+		988F5115169D1D3F005E0674 /* YkChessPieceBishop.m in Sources */ = {isa = PBXBuildFile; fileRef = 988F5114169D1D3F005E0674 /* YkChessPieceBishop.m */; };
+		988F5118169D1DD5005E0674 /* YkChessPieceQueen.m in Sources */ = {isa = PBXBuildFile; fileRef = 988F5117169D1DD5005E0674 /* YkChessPieceQueen.m */; };
+		988F511B169D1E76005E0674 /* YkChessPieceKing.m in Sources */ = {isa = PBXBuildFile; fileRef = 988F511A169D1E76005E0674 /* YkChessPieceKing.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +71,32 @@
 		988F50E0169B72CA005E0674 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		988F50E2169B72CA005E0674 /* ChessterTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChessterTests.h; sourceTree = "<group>"; };
 		988F50E3169B72CA005E0674 /* ChessterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChessterTests.m; sourceTree = "<group>"; };
+		988F50ED169B7369005E0674 /* YkChessGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YkChessGame.h; sourceTree = "<group>"; };
+		988F50EE169B7369005E0674 /* YkChessGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YkChessGame.m; sourceTree = "<group>"; };
+		988F50F4169B7980005E0674 /* YkChessMove.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YkChessMove.h; path = ../YkChessMove.h; sourceTree = "<group>"; };
+		988F50F5169B7980005E0674 /* YkChessMove.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YkChessMove.m; path = ../YkChessMove.m; sourceTree = "<group>"; };
+		988F50F7169B82A6005E0674 /* YkChessPiece.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YkChessPiece.h; sourceTree = "<group>"; };
+		988F50F8169B82A6005E0674 /* YkChessPiece.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YkChessPiece.m; sourceTree = "<group>"; };
+		988F50FA169B8903005E0674 /* YkChessBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YkChessBoard.h; sourceTree = "<group>"; };
+		988F50FB169B8903005E0674 /* YkChessBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YkChessBoard.m; sourceTree = "<group>"; };
+		988F50FD169B8B04005E0674 /* YkChessSquare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YkChessSquare.h; sourceTree = "<group>"; };
+		988F50FE169B8B04005E0674 /* YkChessSquare.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YkChessSquare.m; sourceTree = "<group>"; };
+		988F5100169B8F91005E0674 /* YkChessGraphic.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YkChessGraphic.h; sourceTree = "<group>"; };
+		988F5101169B9751005E0674 /* YkChessGraphic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YkChessGraphic.m; sourceTree = "<group>"; };
+		988F5104169B9E60005E0674 /* YkChessPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YkChessPlayer.h; sourceTree = "<group>"; };
+		988F5105169B9E60005E0674 /* YkChessPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YkChessPlayer.m; sourceTree = "<group>"; };
+		988F5107169BD03B005E0674 /* YkChessPiecePawn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YkChessPiecePawn.h; sourceTree = "<group>"; };
+		988F5108169BD03B005E0674 /* YkChessPiecePawn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YkChessPiecePawn.m; sourceTree = "<group>"; };
+		988F510A169CF335005E0674 /* YkChessPieceKnight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YkChessPieceKnight.h; sourceTree = "<group>"; };
+		988F510B169CF335005E0674 /* YkChessPieceKnight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YkChessPieceKnight.m; sourceTree = "<group>"; };
+		988F5110169D09EE005E0674 /* YkChessPieceRook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YkChessPieceRook.h; sourceTree = "<group>"; };
+		988F5111169D09EE005E0674 /* YkChessPieceRook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YkChessPieceRook.m; sourceTree = "<group>"; };
+		988F5113169D1D3F005E0674 /* YkChessPieceBishop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YkChessPieceBishop.h; sourceTree = "<group>"; };
+		988F5114169D1D3F005E0674 /* YkChessPieceBishop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YkChessPieceBishop.m; sourceTree = "<group>"; };
+		988F5116169D1DD5005E0674 /* YkChessPieceQueen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YkChessPieceQueen.h; sourceTree = "<group>"; };
+		988F5117169D1DD5005E0674 /* YkChessPieceQueen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YkChessPieceQueen.m; sourceTree = "<group>"; };
+		988F5119169D1E76005E0674 /* YkChessPieceKing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YkChessPieceKing.h; sourceTree = "<group>"; };
+		988F511A169D1E76005E0674 /* YkChessPieceKing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YkChessPieceKing.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +159,7 @@
 		988F50BA169B72CA005E0674 /* Chesster */ = {
 			isa = PBXGroup;
 			children = (
+				988F511C169E73C7005E0674 /* YkChess */,
 				988F50C3169B72CA005E0674 /* YkChessAppDelegate.h */,
 				988F50C4169B72CA005E0674 /* YkChessAppDelegate.m */,
 				988F50CC169B72CA005E0674 /* Chesster.xcdatamodeld */,
@@ -159,6 +199,47 @@
 				988F50DF169B72CA005E0674 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		988F5103169B988D005E0674 /* ChessPieces */ = {
+			isa = PBXGroup;
+			children = (
+				988F5107169BD03B005E0674 /* YkChessPiecePawn.h */,
+				988F5108169BD03B005E0674 /* YkChessPiecePawn.m */,
+				988F510A169CF335005E0674 /* YkChessPieceKnight.h */,
+				988F510B169CF335005E0674 /* YkChessPieceKnight.m */,
+				988F5110169D09EE005E0674 /* YkChessPieceRook.h */,
+				988F5111169D09EE005E0674 /* YkChessPieceRook.m */,
+				988F5113169D1D3F005E0674 /* YkChessPieceBishop.h */,
+				988F5114169D1D3F005E0674 /* YkChessPieceBishop.m */,
+				988F5116169D1DD5005E0674 /* YkChessPieceQueen.h */,
+				988F5117169D1DD5005E0674 /* YkChessPieceQueen.m */,
+				988F5119169D1E76005E0674 /* YkChessPieceKing.h */,
+				988F511A169D1E76005E0674 /* YkChessPieceKing.m */,
+			);
+			name = ChessPieces;
+			sourceTree = "<group>";
+		};
+		988F511C169E73C7005E0674 /* YkChess */ = {
+			isa = PBXGroup;
+			children = (
+				988F50ED169B7369005E0674 /* YkChessGame.h */,
+				988F50EE169B7369005E0674 /* YkChessGame.m */,
+				988F50F7169B82A6005E0674 /* YkChessPiece.h */,
+				988F50F8169B82A6005E0674 /* YkChessPiece.m */,
+				988F50FA169B8903005E0674 /* YkChessBoard.h */,
+				988F50FB169B8903005E0674 /* YkChessBoard.m */,
+				988F50FD169B8B04005E0674 /* YkChessSquare.h */,
+				988F50FE169B8B04005E0674 /* YkChessSquare.m */,
+				988F5100169B8F91005E0674 /* YkChessGraphic.h */,
+				988F5101169B9751005E0674 /* YkChessGraphic.m */,
+				988F5104169B9E60005E0674 /* YkChessPlayer.h */,
+				988F5105169B9E60005E0674 /* YkChessPlayer.m */,
+				988F50F4169B7980005E0674 /* YkChessMove.h */,
+				988F50F5169B7980005E0674 /* YkChessMove.m */,
+				988F5103169B988D005E0674 /* ChessPieces */,
+			);
+			name = YkChess;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -274,6 +355,19 @@
 				988F50C1169B72CA005E0674 /* main.m in Sources */,
 				988F50C5169B72CA005E0674 /* YkChessAppDelegate.m in Sources */,
 				988F50CE169B72CA005E0674 /* Chesster.xcdatamodeld in Sources */,
+				988F50EF169B7369005E0674 /* YkChessGame.m in Sources */,
+				988F50F6169B7980005E0674 /* YkChessMove.m in Sources */,
+				988F50F9169B82A6005E0674 /* YkChessPiece.m in Sources */,
+				988F50FC169B8903005E0674 /* YkChessBoard.m in Sources */,
+				988F50FF169B8B04005E0674 /* YkChessSquare.m in Sources */,
+				988F5102169B9751005E0674 /* YkChessGraphic.m in Sources */,
+				988F5106169B9E61005E0674 /* YkChessPlayer.m in Sources */,
+				988F5109169BD03B005E0674 /* YkChessPiecePawn.m in Sources */,
+				988F510C169CF335005E0674 /* YkChessPieceKnight.m in Sources */,
+				988F5112169D09EE005E0674 /* YkChessPieceRook.m in Sources */,
+				988F5115169D1D3F005E0674 /* YkChessPieceBishop.m in Sources */,
+				988F5118169D1DD5005E0674 /* YkChessPieceQueen.m in Sources */,
+				988F511B169D1E76005E0674 /* YkChessPieceKing.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
