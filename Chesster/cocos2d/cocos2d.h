@@ -97,6 +97,7 @@
 #import "CCLayer.h"
 #import "CCMenu.h"
 #import "CCMenuItem.h"
+#import "CCMenuAdvanced.h"
 #import "CCDrawingPrimitives.h"
 #import "CCScene.h"
 #import "CCScheduler.h"

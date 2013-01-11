@@ -89,6 +89,8 @@
 
         // TODO: update display
         
+        [_board.game finishTurn];
+        
         return YES;
     } else {
         return NO;

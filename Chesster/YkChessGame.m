@@ -33,4 +33,12 @@
     return self;
 }
 
+- (void) finishTurn {
+    if(_currentPlayer == _playerOne){
+        _currentPlayer = _playerTwo;
+    } else {
+        _currentPlayer = _playerOne;
+    }
+}
+
 @end

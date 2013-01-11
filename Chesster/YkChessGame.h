@@ -33,6 +33,8 @@
 - (void) playerOneGiveUp;
 - (void) playerTwoGiveUp;
 
+- (void) finishTurn;
+
 @property (readonly, nonatomic, retain) NSString *playerOneColor;
 @property (readonly, nonatomic, retain) NSString *playerTwoColor;
 @property (readonly, nonatomic) YkChessPlayer *currentPlayer;
