@@ -8,7 +8,7 @@
 
 #import <CoreData/CoreData.h>
 
-@interface YkChessGraphic : NSManagedObject
+@interface YkChessGraphic : NSObject
 
 - (CGPoint) coord;
 - (void) reset;

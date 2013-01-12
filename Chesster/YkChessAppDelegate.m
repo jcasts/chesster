@@ -8,8 +8,14 @@
 
 #import "YkChessAppDelegate.h"
 #import "YkChessGame.h"
+#import "YkChessMainMenu.h"
+#import "CCLayer.h"
 
 @implementation YkChessAppDelegate
+
+@synthesize window        = _window;
+@synthesize director      = _director;
+@synthesize navController = _navController;
 
 @synthesize managedObjectContext = _managedObjectContext;
 @synthesize managedObjectModel = _managedObjectModel;
@@ -18,10 +24,73 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
+    
+    // GL View
+    CCGLView *glView = [CCGLView viewWithFrame:[_window bounds]
+                                   pixelFormat:kEAGLColorFormatRGB565
+                                   depthFormat:0
+                            preserveBackbuffer:NO
+                                    sharegroup:nil
+                                 multiSampling:NO
+                               numberOfSamples:0
+                        ];
+    
+    // Director
+    _director = (CCDirectorIOS*)[CCDirector sharedDirector];
+    [_director setDisplayStats:NO];
+    [_director setAnimationInterval:1.0/60];
+    [_director setView:glView];
+    [_director setDelegate:self];
+    [_director enableRetinaDisplay:YES];
+    _director.wantsFullScreenLayout = YES;
+    
+    // Navigation Controller
+    _navController = [[UINavigationController alloc] initWithRootViewController:_director];
+    _navController.navigationBarHidden = YES;
+    
+    [_window addSubview:_navController.view];
+    [_window setRootViewController:_navController];
+    
+    if([_window bounds].size.width == 320.0) _isIPhone = YES;
+    
+    // FAKE GAMES
+    YkChessPlayer *p1 = [YkChessPlayer playerWithName:@"Jeremie"];
+    YkChessPlayer *p2 = [YkChessPlayer playerWithName:@"Zach"];
+    YkChessGame *g1 = [[YkChessGame alloc] initWithPlayerOne:p1 PlayerTwo:p2];
+    YkChessGame *g2 = [[YkChessGame alloc] initWithPlayerOne:p2 PlayerTwo:p1];
+    _games = [NSArray arrayWithObjects:g1, g2, nil];
+    
+    // Main Menu
+    [self showMainMenu];
+    
     [self.window makeKeyAndVisible];
     return YES;
+}
+
+- (void)showMainMenu {
+    CCScene *scene = [CCScene node];
+    [scene addChild: [CCLayerColor layerWithColor:ccc4(255, 255, 255, 255)]];
+    
+    YkChessMainMenu *menu = [YkChessMainMenu menuWithGames:_games ForRect:[_window bounds]];
+    
+    // TODO: Show current games
+    
+    [scene addChild:menu];
+    [_director pushScene:scene];
+}
+
+- (void)showSettingsMenu {
+    // TODO: Implement
+}
+
+- (void)showGame:(YkChessGame *)game {
+    // TODO: Implement
+}
+
+- (void)startNewGame {
+    CCLOG(@"NEW GAME");
+    // TODO: Implement
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

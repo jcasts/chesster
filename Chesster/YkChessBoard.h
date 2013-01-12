@@ -13,7 +13,7 @@
 @class YkChessPiecePawn;
 @class YkChessSquare;
 
-@interface YkChessBoard : NSManagedObject
+@interface YkChessBoard : NSObject
 
 - (id) initWithGame: (YkChessGame *)game;
 - (YkChessSquare *) squareAtCoord: (CGPoint)coord;

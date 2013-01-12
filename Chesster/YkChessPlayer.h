@@ -8,8 +8,9 @@
 
 #import <CoreData/CoreData.h>
 
-@interface YkChessPlayer : NSManagedObject
+@interface YkChessPlayer : NSObject
 
++ (id) playerWithName: (NSString *)name;
 - (Class) promotePrompt;
 
 @property (nonatomic, retain) NSString *name;

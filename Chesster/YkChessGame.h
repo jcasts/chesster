@@ -11,9 +11,10 @@
 
 @class YkChessBoard;
 
-@interface YkChessGame : NSManagedObject
+@interface YkChessGame : NSObject
 
 - (id) initWithPlayerOne: (YkChessPlayer *)playerOne PlayerTwo: (YkChessPlayer *)playerTwo;
+- (void) setupBoard;
 
 - (BOOL) isPlayerOneCheck;
 - (BOOL) isPlayerOneCheckMate;
@@ -43,5 +44,7 @@
 @property (readonly, nonatomic, retain) YkChessPlayer *playerTwo;
 @property (readonly, nonatomic, retain) NSMutableArray *moves;
 @property (readonly, nonatomic, retain) YkChessBoard *board;
+
+@property (nonatomic, retain) NSString *lastMoveDesc;
 
 @end

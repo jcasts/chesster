@@ -10,7 +10,7 @@
 #import "YkChessSquare.h"
 #import "YkChessPlayer.h"
 
-@interface YkChessMove : NSManagedObject
+@interface YkChessMove : NSObject
 
 - (YkChessPlayer *) player;
 

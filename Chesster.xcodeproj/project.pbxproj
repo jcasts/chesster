@@ -133,7 +133,15 @@
 		9813470C169F9007001540F4 /* SqB.png in Resources */ = {isa = PBXBuildFile; fileRef = 981346FE169F9007001540F4 /* SqB.png */; };
 		9813470D169F9007001540F4 /* SqW.png in Resources */ = {isa = PBXBuildFile; fileRef = 981346FF169F9007001540F4 /* SqW.png */; };
 		98134710169FDE1C001540F4 /* CCMenuAdvanced.m in Sources */ = {isa = PBXBuildFile; fileRef = 9813470F169FDE1C001540F4 /* CCMenuAdvanced.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		98134712169FDFDC001540F4 /* new_game_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 98134711169FDFDB001540F4 /* new_game_icon.png */; };
+		9813471516A090C9001540F4 /* YkChessMainMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 9813471416A090C7001540F4 /* YkChessMainMenu.m */; };
+		9813471B16A0B2DC001540F4 /* board_icon_b.png in Resources */ = {isa = PBXBuildFile; fileRef = 9813471616A0B2D9001540F4 /* board_icon_b.png */; };
+		9813471C16A0B2DC001540F4 /* board_icon_w.png in Resources */ = {isa = PBXBuildFile; fileRef = 9813471716A0B2D9001540F4 /* board_icon_w.png */; };
+		9813471D16A0B2DC001540F4 /* new_game_icon_o.png in Resources */ = {isa = PBXBuildFile; fileRef = 9813471816A0B2DA001540F4 /* new_game_icon_o.png */; };
+		9813471E16A0B2DC001540F4 /* new_game_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9813471916A0B2DA001540F4 /* new_game_icon.png */; };
+		9813471F16A0B2DC001540F4 /* settings_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9813471A16A0B2DB001540F4 /* settings_icon.png */; };
+		9813472216A0B5FC001540F4 /* YkChessMainMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 9813472116A0B5FC001540F4 /* YkChessMainMenuItem.m */; };
+		982ECBA816A1174200F0368C /* CCScrollLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 982ECBA716A1174200F0368C /* CCScrollLayer.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		982ECBAD16A11B6E00F0368C /* CCScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 982ECBAC16A11B6E00F0368C /* CCScrollView.m */; };
 		988F50B3169B72CA005E0674 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 988F50B2169B72CA005E0674 /* UIKit.framework */; };
 		988F50B5169B72CA005E0674 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 988F50B4169B72CA005E0674 /* Foundation.framework */; };
 		988F50B7169B72CA005E0674 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 988F50B6169B72CA005E0674 /* CoreGraphics.framework */; };
@@ -430,7 +438,19 @@
 		981346FF169F9007001540F4 /* SqW.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SqW.png; sourceTree = "<group>"; };
 		9813470E169FDE1C001540F4 /* CCMenuAdvanced.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCMenuAdvanced.h; sourceTree = "<group>"; };
 		9813470F169FDE1C001540F4 /* CCMenuAdvanced.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCMenuAdvanced.m; sourceTree = "<group>"; };
-		98134711169FDFDB001540F4 /* new_game_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = new_game_icon.png; sourceTree = "<group>"; };
+		9813471316A090C6001540F4 /* YkChessMainMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YkChessMainMenu.h; sourceTree = "<group>"; };
+		9813471416A090C7001540F4 /* YkChessMainMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YkChessMainMenu.m; sourceTree = "<group>"; };
+		9813471616A0B2D9001540F4 /* board_icon_b.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = board_icon_b.png; sourceTree = "<group>"; };
+		9813471716A0B2D9001540F4 /* board_icon_w.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = board_icon_w.png; sourceTree = "<group>"; };
+		9813471816A0B2DA001540F4 /* new_game_icon_o.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = new_game_icon_o.png; sourceTree = "<group>"; };
+		9813471916A0B2DA001540F4 /* new_game_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = new_game_icon.png; sourceTree = "<group>"; };
+		9813471A16A0B2DB001540F4 /* settings_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings_icon.png; sourceTree = "<group>"; };
+		9813472016A0B5FC001540F4 /* YkChessMainMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YkChessMainMenuItem.h; sourceTree = "<group>"; };
+		9813472116A0B5FC001540F4 /* YkChessMainMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YkChessMainMenuItem.m; sourceTree = "<group>"; };
+		982ECBA616A1174200F0368C /* CCScrollLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCScrollLayer.h; sourceTree = "<group>"; };
+		982ECBA716A1174200F0368C /* CCScrollLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCScrollLayer.m; sourceTree = "<group>"; };
+		982ECBAB16A11B6E00F0368C /* CCScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCScrollView.h; sourceTree = "<group>"; };
+		982ECBAC16A11B6E00F0368C /* CCScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCScrollView.m; sourceTree = "<group>"; };
 		988F50AE169B72CA005E0674 /* Chesster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chesster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		988F50B2169B72CA005E0674 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		988F50B4169B72CA005E0674 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -515,6 +535,7 @@
 		981344DD169F4B74001540F4 /* libs */ = {
 			isa = PBXGroup;
 			children = (
+				982ECBAA16A11B0000F0368C /* ext */,
 				981346BC169F4C21001540F4 /* kazmath */,
 				981344DE169F4BF6001540F4 /* cocos2d */,
 				981345A1169F4BF6001540F4 /* CocosDenshion */,
@@ -673,6 +694,8 @@
 				98134585169F4BF6001540F4 /* Support */,
 				9813470E169FDE1C001540F4 /* CCMenuAdvanced.h */,
 				9813470F169FDE1C001540F4 /* CCMenuAdvanced.m */,
+				982ECBA616A1174200F0368C /* CCScrollLayer.h */,
+				982ECBA716A1174200F0368C /* CCScrollLayer.m */,
 			);
 			path = cocos2d;
 			sourceTree = "<group>";
@@ -851,7 +874,11 @@
 		981346F1169F9007001540F4 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				98134711169FDFDB001540F4 /* new_game_icon.png */,
+				9813471616A0B2D9001540F4 /* board_icon_b.png */,
+				9813471716A0B2D9001540F4 /* board_icon_w.png */,
+				9813471816A0B2DA001540F4 /* new_game_icon_o.png */,
+				9813471916A0B2DA001540F4 /* new_game_icon.png */,
+				9813471A16A0B2DB001540F4 /* settings_icon.png */,
 				981346F2169F9007001540F4 /* BB.png */,
 				981346F3169F9007001540F4 /* BW.png */,
 				981346F4169F9007001540F4 /* KB.png */,
@@ -869,6 +896,15 @@
 			);
 			path = Resources;
 			sourceTree = SOURCE_ROOT;
+		};
+		982ECBAA16A11B0000F0368C /* ext */ = {
+			isa = PBXGroup;
+			children = (
+				982ECBAB16A11B6E00F0368C /* CCScrollView.h */,
+				982ECBAC16A11B6E00F0368C /* CCScrollView.m */,
+			);
+			name = ext;
+			sourceTree = "<group>";
 		};
 		988F50A3169B72CA005E0674 = {
 			isa = PBXGroup;
@@ -915,6 +951,10 @@
 				988F511C169E73C7005E0674 /* YkChess */,
 				988F50C3169B72CA005E0674 /* YkChessAppDelegate.h */,
 				988F50C4169B72CA005E0674 /* YkChessAppDelegate.m */,
+				9813471316A090C6001540F4 /* YkChessMainMenu.h */,
+				9813471416A090C7001540F4 /* YkChessMainMenu.m */,
+				9813472016A0B5FC001540F4 /* YkChessMainMenuItem.h */,
+				9813472116A0B5FC001540F4 /* YkChessMainMenuItem.m */,
 				988F50CC169B72CA005E0674 /* Chesster.xcdatamodeld */,
 				988F50BB169B72CA005E0674 /* Supporting Files */,
 			);
@@ -1090,7 +1130,11 @@
 				9813470B169F9007001540F4 /* RW.png in Resources */,
 				9813470C169F9007001540F4 /* SqB.png in Resources */,
 				9813470D169F9007001540F4 /* SqW.png in Resources */,
-				98134712169FDFDC001540F4 /* new_game_icon.png in Resources */,
+				9813471B16A0B2DC001540F4 /* board_icon_b.png in Resources */,
+				9813471C16A0B2DC001540F4 /* board_icon_w.png in Resources */,
+				9813471D16A0B2DC001540F4 /* new_game_icon_o.png in Resources */,
+				9813471E16A0B2DC001540F4 /* new_game_icon.png in Resources */,
+				9813471F16A0B2DC001540F4 /* settings_icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1185,6 +1229,7 @@
 				98134644169F4BF6001540F4 /* CCRenderTexture.m in Sources */,
 				98134645169F4BF6001540F4 /* CCScene.m in Sources */,
 				98134646169F4BF6001540F4 /* CCScheduler.m in Sources */,
+				982ECBA816A1174200F0368C /* CCScrollLayer.m in Sources */,
 				98134647169F4BF6001540F4 /* CCShaderCache.m in Sources */,
 				98134648169F4BF6001540F4 /* ccShaders.m in Sources */,
 				98134649169F4BF6001540F4 /* CCSprite.m in Sources */,
@@ -1242,6 +1287,9 @@
 				981346EB169F4C21001540F4 /* vec2.c in Sources */,
 				981346EC169F4C21001540F4 /* vec3.c in Sources */,
 				981346ED169F4C21001540F4 /* vec4.c in Sources */,
+				9813471516A090C9001540F4 /* YkChessMainMenu.m in Sources */,
+				9813472216A0B5FC001540F4 /* YkChessMainMenuItem.m in Sources */,
+				982ECBAD16A11B6E00F0368C /* CCScrollView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

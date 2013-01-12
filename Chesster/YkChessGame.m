@@ -19,18 +19,23 @@
 @synthesize playerOneColor = _playerOneColor;
 @synthesize playerTwoColor = _playerTwoColor;
 @synthesize currentPlayer  = _currentPlayer;
+@synthesize lastMoveDesc   = _lastMoveDesc;
 
 - (id) initWithPlayerOne: (YkChessPlayer *)playerOne PlayerTwo:(YkChessPlayer *)playerTwo {
     self = [super init];
     _playerOne = playerOne;
     _playerTwo = playerTwo;
-    _board     = [[YkChessBoard alloc] init];
-    _moves     = [NSMutableArray new];
     _playerOneColor = @"white";
     _playerTwoColor = @"black";
     _currentPlayer  = playerOne;
+    _lastMoveDesc   = @"(First Move)";
     
     return self;
+}
+
+- (void) setupBoard {
+    _board     = [[YkChessBoard alloc] init];
+    _moves     = [NSMutableArray new];
 }
 
 - (void) finishTurn {

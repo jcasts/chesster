@@ -7,11 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "YkChessGame.h"
 #import "cocos2d.h"
 
-@interface YkChessAppDelegate : UIResponder <UIApplicationDelegate>
+@interface YkChessAppDelegate : UIResponder <UIApplicationDelegate, CCDirectorDelegate>{
+    BOOL _isIPhone;
+}
 
 @property (strong, nonatomic) UIWindow *window;
+@property CCDirectorIOS *director;
+@property (readonly) UINavigationController *navController;
 
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
@@ -21,5 +26,10 @@
 
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;
+
+- (void)showMainMenu;
+- (void)showSettingsMenu;
+- (void)showGame: (YkChessGame *)game;
+- (void)startNewGame;
 
 @end

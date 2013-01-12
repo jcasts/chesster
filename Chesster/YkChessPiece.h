@@ -13,7 +13,7 @@
 @class YkChessSquare;
 @class YkChessBoard;
 
-@interface YkChessPiece : NSManagedObject
+@interface YkChessPiece : NSObject
 
 - (id) initWithSquare: (YkChessSquare *)nSquare Player:(YkChessPlayer *)nPlayer Color:(NSString *)nColor;
 - (NSArray *) availableSquares;
