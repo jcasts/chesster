@@ -39,6 +39,8 @@
     } else {
         self.contentSize = srect.size;
     }
+    
+    self.anchorPoint = CGPointMake(self.anchorPoint.x, 0.0);
 }
 
 - (void) setTitle:(NSString *)title {

@@ -142,6 +142,7 @@
 		9813472216A0B5FC001540F4 /* YkChessMainMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 9813472116A0B5FC001540F4 /* YkChessMainMenuItem.m */; };
 		982ECBA816A1174200F0368C /* CCScrollLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 982ECBA716A1174200F0368C /* CCScrollLayer.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		982ECBAD16A11B6E00F0368C /* CCScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 982ECBAC16A11B6E00F0368C /* CCScrollView.m */; };
+		982ECBB816A1D83100F0368C /* CCScrollNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 982ECBB716A1D83100F0368C /* CCScrollNode.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		988F50B3169B72CA005E0674 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 988F50B2169B72CA005E0674 /* UIKit.framework */; };
 		988F50B5169B72CA005E0674 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 988F50B4169B72CA005E0674 /* Foundation.framework */; };
 		988F50B7169B72CA005E0674 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 988F50B6169B72CA005E0674 /* CoreGraphics.framework */; };
@@ -451,6 +452,8 @@
 		982ECBA716A1174200F0368C /* CCScrollLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCScrollLayer.m; sourceTree = "<group>"; };
 		982ECBAB16A11B6E00F0368C /* CCScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCScrollView.h; sourceTree = "<group>"; };
 		982ECBAC16A11B6E00F0368C /* CCScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCScrollView.m; sourceTree = "<group>"; };
+		982ECBB616A1D83100F0368C /* CCScrollNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCScrollNode.h; sourceTree = "<group>"; };
+		982ECBB716A1D83100F0368C /* CCScrollNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCScrollNode.m; sourceTree = "<group>"; };
 		988F50AE169B72CA005E0674 /* Chesster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chesster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		988F50B2169B72CA005E0674 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		988F50B4169B72CA005E0674 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -902,6 +905,8 @@
 			children = (
 				982ECBAB16A11B6E00F0368C /* CCScrollView.h */,
 				982ECBAC16A11B6E00F0368C /* CCScrollView.m */,
+				982ECBB616A1D83100F0368C /* CCScrollNode.h */,
+				982ECBB716A1D83100F0368C /* CCScrollNode.m */,
 			);
 			name = ext;
 			sourceTree = "<group>";
@@ -1290,6 +1295,7 @@
 				9813471516A090C9001540F4 /* YkChessMainMenu.m in Sources */,
 				9813472216A0B5FC001540F4 /* YkChessMainMenuItem.m in Sources */,
 				982ECBAD16A11B6E00F0368C /* CCScrollView.m in Sources */,
+				982ECBB816A1D83100F0368C /* CCScrollNode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

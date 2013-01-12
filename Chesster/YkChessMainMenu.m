@@ -11,6 +11,7 @@
 #import "YkChessAppDelegate.h"
 #import "CCMenuAdvanced.h"
 #import "CCMenu.h"
+#import "CCScrollNode.h"
 
 @implementation YkChessMainMenu
 
@@ -23,30 +24,49 @@
     
     _smallScreen = NO;
     if(rect.size.width == 320.0) _smallScreen = YES;
+
+    
+    CCLayer *sublayer = [[CCLayer alloc] init];
+    
+    float y = 0.0;//rect.size.height/2.0;
+    float h = 0.0;
+    
+    CCMenu *menu = [self menu];
+    menu.position = CGPointMake(menu.position.x, y);
+    y = y + menu.contentSize.height;
+    h = h + menu.contentSize.height;
+    [sublayer addChild:menu];
+    
+    CCMenu *gmenu = [self gamesMenu:games];
+    if(gmenu){
+        y = y + 30.0;
+        h = h + gmenu.contentSize.height + 30.0;
+        gmenu.position = CGPointMake(gmenu.position.x, y);
+        
+        [sublayer addChild:gmenu];
+    }
+    
+    sublayer.contentSize = CGSizeMake(sublayer.contentSize.width, h);
     
     if(_smallScreen){
         [self setScaleX:0.85];
         [self setScaleY:0.85];
     }
     
-    CCLayer *sublayer = [[CCLayer alloc] init];
-    //sublayer.anchorPoint = CGPointMake(sublayer.boundingBox.size.width/2.0, sublayer.boundingBox.size.height/2.0);
     
-    float y = rect.size.height/2.0;
-    
-    CCMenu *gmenu = [self gamesMenu:games];
-    if(gmenu){
-        [sublayer addChild:gmenu];
-        NSLog(@"SIZE: %f", gmenu.contentSize.height);
-        y = y - (gmenu.contentSize.height/2.0) - 30.0;
+    if([sublayer boundingBox].size.height > rect.size.height){
+        sublayer.position = CGPointMake(sublayer.position.x, (rect.size.height)-(sublayer.contentSize.height));
+        
+        CCScrollNode *scroller = [CCScrollNode node];
+        scroller.scrollView.showsVerticalScrollIndicator = NO;
+        [scroller addChild:sublayer];
+        
+        scroller.scrollView.contentSize = sublayer.contentSize;
+        [self addChild: scroller];
+    } else {
+        sublayer.position = CGPointMake(sublayer.position.x, (rect.size.height/2.0)-(sublayer.contentSize.height/2.0));
+        [self addChild: sublayer];
     }
-    
-    CCMenu *menu = [self menu];
-    menu.position = CGPointMake(menu.position.x, y);
-    [sublayer addChild:menu];
-    
-    
-    [self addChild: sublayer];
     
     return self;
 }
@@ -71,8 +91,7 @@
     
     CCMenu *menu = [CCMenu menuWithArray:ary];
     menu.isTouchEnabled = YES;
-    menu.contentSize = CGSizeMake(menu.contentSize.width, y);
-    //[menu alignItemsVertically];
+    menu.contentSize = CGSizeMake(menu.contentSize.width, y-10.0);
     return menu;
 }
 
@@ -93,6 +112,7 @@
     
     CCMenu *menu = [CCMenu menuWithItems:newGameButton, newOnlineGameButton, settingsButton, nil];
     menu.isTouchEnabled = YES;
+    menu.contentSize = CGSizeMake(menu.contentSize.width, newGameButton.contentSize.height);
     
     [menu alignItemsHorizontally];
     

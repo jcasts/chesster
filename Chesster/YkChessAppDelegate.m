@@ -59,7 +59,10 @@
     YkChessPlayer *p2 = [YkChessPlayer playerWithName:@"Zach"];
     YkChessGame *g1 = [[YkChessGame alloc] initWithPlayerOne:p1 PlayerTwo:p2];
     YkChessGame *g2 = [[YkChessGame alloc] initWithPlayerOne:p2 PlayerTwo:p1];
-    _games = [NSArray arrayWithObjects:g1, g2, nil];
+    YkChessGame *g3 = [[YkChessGame alloc] initWithPlayerOne:p2 PlayerTwo:p1];
+    YkChessGame *g4 = [[YkChessGame alloc] initWithPlayerOne:p2 PlayerTwo:p1];
+    YkChessGame *g5 = [[YkChessGame alloc] initWithPlayerOne:p2 PlayerTwo:p1];
+    _games = [NSArray arrayWithObjects:g1, g2, g3, g4, g5, nil];
     
     // Main Menu
     [self showMainMenu];
