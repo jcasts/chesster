@@ -7,14 +7,15 @@
 //
 
 #import "CCScrollView.h"
-#import "CCMenu.h"
+#import "cocos2d.h"
 
 @interface CCScrollOverlay : CCMenu {
     CCScrollView *_view;
+    UITouch *_touch;
+    BOOL _blocking;
 }
 
 + (id) overlayForView:(CCScrollView *)scroller;
 - (id) initForView:(CCScrollView *)scroller;
-- (void) registerWithTouchDispatcher;
 
 @end

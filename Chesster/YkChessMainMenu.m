@@ -57,6 +57,7 @@
         //sublayer.position = CGPointMake(sublayer.position.x, (rect.size.height)-(sublayer.contentSize.height));
         
         CCScrollView *scroller = [CCScrollView viewWithSize:rect.size Node:sublayer];
+        [scroller handleTouchForMenus:[NSArray arrayWithObjects:gmenu,menu, nil]];
         //scroller.contentOffset = CGPointZero;
         //scroller.direction = CCScrollViewDirectionVertical;
         

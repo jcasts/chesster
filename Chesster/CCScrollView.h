@@ -24,12 +24,14 @@
 - (id) initWithSize:(CGSize)size Node:(CCNode *)child;
 
 - (void) setContentOffset:(CGPoint)offset;
+- (void) handleTouchForMenus:(NSArray *)menus;
 
 @property (readonly, nonatomic) CGPoint contentOffset;
 @property (readonly, nonatomic) BOOL reachedTop;
 @property (readonly, nonatomic) BOOL reachedBottom;
 @property (readonly, nonatomic) BOOL isDragging;
 @property (readonly, nonatomic) BOOL isScrolling;
+@property (readonly, nonatomic) NSArray *menus;
 @property (nonatomic) float decelerationRate;
 @property (nonatomic) float bounceSpeed;
 @end

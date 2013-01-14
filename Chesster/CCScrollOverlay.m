@@ -7,15 +7,8 @@
 //
 
 #import "CCScrollOverlay.h"
-#import "cocos2d.h"
 
 @implementation CCScrollOverlay
-
-+ (id) node {
-    CCScrollOverlay *inst = [super node];
-    inst.enabled = YES;
-    return inst;
-}
 
 + (id) overlayForView:(CCScrollView *)scroller {
     return [[self alloc] initForView:scroller];
@@ -31,26 +24,60 @@
     return self;
 }
 
+- (void) blockMenusWithTouch:(UITouch*)touch andEvent:(UIEvent*)event{
+    if(_blocking || !_view.menus) return;
+    
+    for(CCMenu *menu in _view.menus){
+        for(CCMenuItem *item in menu.children){
+            [item setIsEnabled:NO];
+        }
+    }
+    
+    _blocking = YES;
+}
+
+- (void) unblockMenus {
+    if(!_blocking || !_view.menus) return;
+    
+    for(CCMenu *menu in _view.menus){
+        for(CCMenuItem *item in menu.children){
+            [item setIsEnabled:YES];
+        }
+    }
+    
+    _blocking = NO;
+}
+
 - (BOOL) ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event {
-    NSLog(@"OVERLAY!");
-    [_view ccTouchBegan:touch withEvent:event];
-    return YES;
+    BOOL useTouch = [_view ccTouchBegan:touch withEvent:event];
+    if(useTouch) _touch = touch;
+    return useTouch;
 }
 
 - (void) ccTouchMoved:(UITouch *)touch withEvent:(UIEvent *)event {
-    [_view ccTouchMoved:touch withEvent:event];
+    if(touch == _touch){
+        [self blockMenusWithTouch:touch andEvent:event];
+        [_view ccTouchMoved:touch withEvent:event];
+    }
 }
 
 - (void) ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event{
-    [_view ccTouchEnded:touch withEvent:event];
+    if(touch == _touch) {        
+        [self unblockMenus];
+        [_view ccTouchEnded:touch withEvent:event];
+    }
 }
 
 - (void) ccTouchCancelled:(UITouch *)touch withEvent:(UIEvent *)event{
-    [_view ccTouchCancelled:touch withEvent:event];
+    if(touch == _touch){
+        [self unblockMenus];
+        [_view ccTouchCancelled:touch withEvent:event];
+    }
 }
 
 - (void) registerWithTouchDispatcher {
-    [[[CCDirector sharedDirector] touchDispatcher] removeDelegate:self];
-	[[[CCDirector sharedDirector] touchDispatcher] addTargetedDelegate:self priority:kCCMenuHandlerPriority swallowsTouches:NO];
+    CCTouchDispatcher *dispatcher = [[CCDirector sharedDirector] touchDispatcher];
+    [dispatcher removeDelegate:self];
+	[dispatcher addTargetedDelegate:self priority:kCCMenuHandlerPriority swallowsTouches:NO];
 }
 @end

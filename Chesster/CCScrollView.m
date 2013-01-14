@@ -16,6 +16,7 @@
 @synthesize isScrolling = _isScrolling;
 @synthesize decelerationRate = _decelerationRate;
 @synthesize bounceSpeed = _bounceSpeed;
+@synthesize menus = _menus;
 
 @dynamic contentOffset;
 @dynamic reachedTop;
@@ -44,10 +45,14 @@
     
     CCScrollOverlay *overlay = [CCScrollOverlay overlayForView:self];
     overlay.contentSize = _size;
-    [self addChild:overlay z:2];
+    [self addChild:overlay z:10];
     
     [self registerWithTouchDispatcher];
     return self;
+}
+
+- (void) handleTouchForMenus:(NSArray *)menus {
+    _menus = menus;
 }
 
 - (BOOL) reachedTop {
