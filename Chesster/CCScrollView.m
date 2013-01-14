@@ -7,6 +7,7 @@
 //
 
 #import "CCScrollView.h"
+#import "CCScrollOverlay.h"
 #import "cocos2d.h"
 
 @implementation CCScrollView
@@ -39,7 +40,11 @@
     _minDist = 0.1;
     _debug = NO;
     
-    [self addChild:child];
+    [self addChild:child z:1];
+    
+    CCScrollOverlay *overlay = [CCScrollOverlay overlayForView:self];
+    overlay.contentSize = _size;
+    [self addChild:overlay z:2];
     
     [self registerWithTouchDispatcher];
     return self;
@@ -123,7 +128,7 @@
 }
 
 - (void) registerWithTouchDispatcher {
-	[[[CCDirector sharedDirector] touchDispatcher] addTargetedDelegate:self priority:kCCMenuHandlerPriority swallowsTouches:YES];
+	[[[CCDirector sharedDirector] touchDispatcher] addTargetedDelegate:self priority:kCCMenuHandlerPriority swallowsTouches:NO];
 }
 
 - (BOOL) ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event {
