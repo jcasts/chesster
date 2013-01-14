@@ -9,9 +9,8 @@
 #import "YkChessMainMenu.h"
 #import "YkChessMainMenuItem.h"
 #import "YkChessAppDelegate.h"
-#import "CCMenuAdvanced.h"
 #import "CCMenu.h"
-#import "CCScrollNode.h"
+#import "CCScrollView.h"
 
 @implementation YkChessMainMenu
 
@@ -28,7 +27,7 @@
     
     CCLayer *sublayer = [[CCLayer alloc] init];
     
-    float y = 0.0;//rect.size.height/2.0;
+    float y = 0.0;
     float h = 0.0;
     
     CCMenu *menu = [self menu];
@@ -55,13 +54,13 @@
     
     
     if([sublayer boundingBox].size.height > rect.size.height){
-        sublayer.position = CGPointMake(sublayer.position.x, (rect.size.height)-(sublayer.contentSize.height));
+        //sublayer.position = CGPointMake(sublayer.position.x, (rect.size.height)-(sublayer.contentSize.height));
         
-        CCScrollNode *scroller = [CCScrollNode node];
-        scroller.scrollView.showsVerticalScrollIndicator = NO;
-        [scroller addChild:sublayer];
+        CCScrollView *scroller = [CCScrollView viewWithSize:rect.size Node:sublayer];
+        //scroller.contentOffset = CGPointZero;
+        //scroller.direction = CCScrollViewDirectionVertical;
         
-        scroller.scrollView.contentSize = sublayer.contentSize;
+        //[scroller addChild: sublayer];
         [self addChild: scroller];
     } else {
         sublayer.position = CGPointMake(sublayer.position.x, (rect.size.height/2.0)-(sublayer.contentSize.height/2.0));
@@ -70,6 +69,7 @@
     
     return self;
 }
+
 
 -(CCMenu *)gamesMenu:(NSArray *)games {
     NSMutableArray *ary = [NSMutableArray array];
