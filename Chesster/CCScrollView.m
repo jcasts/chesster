@@ -32,12 +32,13 @@
     
     _size = size;
     self.contentSize = _size;
+    self.anchorPoint = CGPointZero;
     
     _child = child;
     _child.anchorPoint = CGPointZero;
     _child.position = CGPointMake(_child.position.x,[self topY]);
     _decelerationRate = 0.95;
-    _bounceSpeed = 0.1;
+    _bounceSpeed = 0.15;
     _minDist = 0.1;
     _debug = NO;
     
@@ -64,7 +65,7 @@
 }
 
 - (float) topY {
-    return (_size.height-_child.contentSize.height);
+    return (_size.height-(_child.contentSize.height*_child.scaleY));
 }
 
 - (float) bottomY {
@@ -76,31 +77,26 @@
     
     if((lastDist > _minDist && self.reachedBottom) || (lastDist < -_minDist && self.reachedTop)){
         // went over, need to bounce back down, so decelerate faster
-        float speed = _child.position.y - _targetY;
-        if(speed == 0) speed = lastDist;
-        if(speed > _size.height/3.0) speed = _size.height/3.0;
-        if(speed < -_size.height/3.0) speed = -_size.height/3.0;
+        float dist = _child.position.y - _targetY;
+        float distMax = _size.height/3.0;
+        float distLeft = distMax - fabsf(dist);
         
-        float rateMod = speed * _bounceSpeed;
-        travelDist = lastDist * (1.0/fabsf(rateMod));
+        travelDist = lastDist * (distLeft / distMax);
+        if(_debug) NSLog(@"Overshooting");
         
     } else if(_isDragging) {
         // Do nothing
         travelDist = lastDist;
         
-    } else if((lastDist >= _minDist && self.reachedTop) || (lastDist <= -_minDist && self.reachedBottom)) {
-        // bouncing back
-        if(fabsf(_child.position.y - _targetY) <= _minDist) {
+    } else if((lastDist < _minDist && self.reachedBottom) || (lastDist > -_minDist && self.reachedTop)) {
+        // when going over and slow enough, invert the rate
+        if(fabsf(_child.position.y - _targetY) <= _minDist && lastDist < _minDist * 3) {
             travelDist = _minDist;
             if(_targetY == [self bottomY]) travelDist = -travelDist;
         } else {
-            travelDist = lastDist * _decelerationRate * _decelerationRate;
+            travelDist = (_targetY - _child.position.y) * _bounceSpeed * self.scaleY;
         }
-        
-    } else if((lastDist < _minDist && lastDist >= 0.0 && self.reachedBottom) || (lastDist > -_minDist && lastDist <= 0.0 && self.reachedTop)) {
-        // when going over and slow enough, invert the rate
-        travelDist = (_targetY - _child.position.y) * _bounceSpeed;
-        if(_debug) NSLog(@"Bounce Init");
+        if(_debug) NSLog(@"Bouncing Back");
         
     } else {
         travelDist = lastDist * _decelerationRate;
@@ -145,8 +141,6 @@
     _touchStartPoint = [self convertTouchToNodeSpace:touch];
     _touchDist = 0.0;
     
-    NSLog(@"TOUCHE");
-    
     return YES;
 }
 
@@ -159,29 +153,25 @@
     _touchDist = touchCurrPoint.y - _touchStartPoint.y;
     _touchStartPoint = touchCurrPoint;
     
-    if(_touchDist > 0.0) {
-        _targetY = [self bottomY];
-    } else {
-        _targetY = [self topY];
+    if(![self needsBounceBack]){
+        if(_touchDist > 0.0) {
+            NSLog(@"BOTTOM");
+            _targetY = [self bottomY];
+        } else if(_touchDist < 0.0) {
+            NSLog(@"TOP");
+            _targetY = [self topY];
+        }
     }
     
-    if (fabsf(_touchDist) <= _minDist) {
-        _isScrolling = NO;
-    } else {
-        _touchDist = [self travelDistanceWithLastDist: _touchDist];
-        _child.position = CGPointMake(_child.position.x, _child.position.y+_touchDist);
-    }
+    _touchDist = [self travelDistanceWithLastDist: _touchDist];
+    _child.position = CGPointMake(_child.position.x, _child.position.y+_touchDist);
 }
 
 - (void) ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event {
     if(!self.visible || touch != _touch) return;
     
     if(_touchMoved) {
-        if(fabsf(_touchDist) < _minDist) {
-           _isScrolling = NO;
-        } else {
-            [self schedule:@selector(decelerateOverTime:)];
-        }
+        [self schedule:@selector(decelerateOverTime:)];
     }
     _touch = nil;
     _isDragging = NO;
