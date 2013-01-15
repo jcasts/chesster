@@ -30,6 +30,7 @@
 - (id) initWithSize:(CGSize)size Node:(CCNode *)child {
     if(!(self = [self init])) return self;
     
+    if(child.contentSize.height < size.height) size = CGSizeMake(size.height, child.contentSize.height);
     _size = size;
     self.contentSize = _size;
     self.anchorPoint = CGPointZero;
@@ -40,7 +41,7 @@
     _decelerationRate = 0.95;
     _bounceSpeed = 0.15;
     _minDist = 0.1;
-    _debug = NO;
+    _debug = YES;
     
     [self addChild:child z:1];
     
@@ -74,8 +75,12 @@
 
 - (float) travelDistanceWithLastDist:(float)lastDist {
     float travelDist = 0.0;
-    
-    if((lastDist > _minDist && self.reachedBottom) || (lastDist < -_minDist && self.reachedTop)){
+    if(!_isDragging && fabsf(_child.position.y - _targetY) <= _minDist * 2 && fabsf(lastDist) < _minDist * 3){
+        // Stop on target
+        travelDist = _targetY - _child.position.y;
+        if(_debug) NSLog(@"Stopping");
+        
+    } else if((lastDist > _minDist && self.reachedBottom) || (lastDist < -_minDist && self.reachedTop)){
         // went over, need to bounce back down, so decelerate faster
         float dist = _child.position.y - _targetY;
         float distMax = _size.height/3.0;
@@ -92,11 +97,6 @@
         // Invert direction due to bounce
         travelDist = (_targetY - _child.position.y) * _bounceSpeed;
         if(_debug) NSLog(@"Bounce Init");
-        
-    } else if(fabsf(_child.position.y - _targetY) <= _minDist * 2 && lastDist < _minDist * 3){
-        // Stop on target
-        travelDist = _targetY - _child.position.y;
-        if(_debug) NSLog(@"Stopping");
         
     } else if((lastDist < _minDist && self.reachedBottom) || (lastDist > -_minDist && self.reachedTop)) {
         // Bouncing back

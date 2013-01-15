@@ -52,21 +52,14 @@
         [self setScaleY:0.85];
     }
     
-    
-    if([sublayer boundingBox].size.height > rect.size.height){
-        //sublayer.position = CGPointMake(sublayer.position.x, (rect.size.height)-(sublayer.contentSize.height));
-        
+    //if([sublayer boundingBox].size.height > rect.size.height){
         CCScrollView *scroller = [CCScrollView viewWithSize:rect.size Node:sublayer];
         [scroller handleTouchForMenus:[NSArray arrayWithObjects:gmenu,menu, nil]];
-        //scroller.contentOffset = CGPointZero;
-        //scroller.direction = CCScrollViewDirectionVertical;
-        
-        //[scroller addChild: sublayer];
         [self addChild: scroller];
-    } else {
+    /*} else {
         sublayer.position = CGPointMake(sublayer.position.x, (rect.size.height/2.0)-(sublayer.contentSize.height/2.0));
         [self addChild: sublayer];
-    }
+    }*/
     
     return self;
 }
