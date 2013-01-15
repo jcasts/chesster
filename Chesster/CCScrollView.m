@@ -88,14 +88,19 @@
         // Do nothing
         travelDist = lastDist;
         
+    } else if([self needsBounceBack] && fabsf(lastDist) < fabsf((_targetY - _child.position.y) * _bounceSpeed)) {
+        // Invert direction due to bounce
+        travelDist = (_targetY - _child.position.y) * _bounceSpeed;
+        if(_debug) NSLog(@"Bounce Init");
+        
+    } else if(fabsf(_child.position.y - _targetY) <= _minDist * 2 && lastDist < _minDist * 3){
+        // Stop on target
+        travelDist = _targetY - _child.position.y;
+        if(_debug) NSLog(@"Stopping");
+        
     } else if((lastDist < _minDist && self.reachedBottom) || (lastDist > -_minDist && self.reachedTop)) {
-        // when going over and slow enough, invert the rate
-        if(fabsf(_child.position.y - _targetY) <= _minDist && lastDist < _minDist * 3) {
-            travelDist = _minDist;
-            if(_targetY == [self bottomY]) travelDist = -travelDist;
-        } else {
-            travelDist = (_targetY - _child.position.y) * _bounceSpeed * self.scaleY;
-        }
+        // Bouncing back
+        travelDist = lastDist * (1.0 - _bounceSpeed);
         if(_debug) NSLog(@"Bouncing Back");
         
     } else {
