@@ -52,14 +52,11 @@
         [self setScaleY:0.85];
     }
     
-    //if([sublayer boundingBox].size.height > rect.size.height){
-        CCScrollView *scroller = [CCScrollView viewWithSize:rect.size Node:sublayer];
-        [scroller handleTouchForMenus:[NSArray arrayWithObjects:gmenu,menu, nil]];
-        [self addChild: scroller];
-    /*} else {
-        sublayer.position = CGPointMake(sublayer.position.x, (rect.size.height/2.0)-(sublayer.contentSize.height/2.0));
-        [self addChild: sublayer];
-    }*/
+    CCScrollView *scroller = [CCScrollView viewWithSize:rect.size Node:sublayer];
+    [scroller handleTouchForMenus:[NSArray arrayWithObjects:gmenu,menu, nil]];
+    scroller.position = CGPointMake(scroller.position.x, (self.contentSize.height/2.0) - (scroller.contentSize.height/2.0));
+    
+    [self addChild: scroller];
     
     return self;
 }

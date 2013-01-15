@@ -17,6 +17,8 @@
     float _touchDist;
     float _targetY;
     float _minDist;
+    int _animationCount;
+    float _timeCount;
     BOOL _debug;
 }
 

@@ -41,7 +41,7 @@
     _decelerationRate = 0.95;
     _bounceSpeed = 0.15;
     _minDist = 0.1;
-    _debug = YES;
+    _debug = NO;
     
     [self addChild:child z:1];
     
@@ -49,6 +49,7 @@
     overlay.contentSize = _size;
     [self addChild:overlay z:10];
     
+    [self resetAnimationCount];
     [self registerWithTouchDispatcher];
     return self;
 }
@@ -112,25 +113,56 @@
 }
 
 - (void) decelerateOverTime:(ccTime)dt {
-    if(_isDragging || !_isScrolling){
-        [self unschedule:@selector(decelerateOverTime:)];
-        return;
-    }
+    int missingCount = [self updateAnimationCount];
+    for(int i=0; i<missingCount; i++){
+        if(_isDragging || !_isScrolling){
+            [self unschedule:@selector(decelerateOverTime:)];
+            [self resetAnimationCount];
+            return;
+        }
     
-    if (fabsf(_touchDist) <= _minDist && fabsf(_child.position.y - _targetY) < _minDist){
-        // clip to target
-        _child.position = CGPointMake(_child.position.x, _targetY);
-    } else {
-        _touchDist = [self travelDistanceWithLastDist: _touchDist];
-        _child.position = CGPointMake(_child.position.x, _child.position.y+_touchDist);
-    }
+        if (fabsf(_touchDist) <= _minDist && fabsf(_child.position.y - _targetY) < _minDist){
+            // clip to target
+            _child.position = CGPointMake(_child.position.x, _targetY);
+        } else {
+            _touchDist = [self travelDistanceWithLastDist: _touchDist];
+            _child.position = CGPointMake(_child.position.x, _child.position.y+_touchDist);
+        }
     
-    if (fabsf(_touchDist) <= _minDist && ![self needsBounceBack]){
-        if(_debug) NSLog(@"DONE");
-        _isScrolling = NO;
-    }
+        if (fabsf(_touchDist) <= _minDist && ![self needsBounceBack]){
+            if(_debug) NSLog(@"DONE");
+            _isScrolling = NO;
+        }
     
-    if(_debug && _child.position.y == _targetY) NSLog(@"HIT TARGET");
+        if(_child.position.y == _targetY){
+            if(_debug) NSLog(@"HIT TARGET");
+            break;
+        }
+    }
+}
+
+- (int) updateAnimationCount {
+    float interval = [CCDirector sharedDirector].animationInterval;
+    int missing = (1 + roundf(_timeCount / interval) - _animationCount);
+    _animationCount = _animationCount + missing;
+    if(missing == 0) return 1;
+    return missing;
+}
+
+- (void) startAnimationCount {
+    [self resetAnimationCount];
+    [self schedule:@selector(countAnimation:)];
+}
+
+- (void) resetAnimationCount {
+    _animationCount = 0;
+    _timeCount = 0;
+    [self unschedule:@selector(countAnimation:)];
+}
+
+- (void) countAnimation:(ccTime)dt {
+    _timeCount += dt;
+    _animationCount++;
 }
 
 - (void) registerWithTouchDispatcher {
@@ -174,6 +206,7 @@
     if(!self.visible || touch != _touch) return;
     
     if(_touchMoved) {
+        [self startAnimationCount];
         [self schedule:@selector(decelerateOverTime:)];
     }
     _touch = nil;
