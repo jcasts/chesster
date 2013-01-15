@@ -155,10 +155,8 @@
     
     if(![self needsBounceBack]){
         if(_touchDist > 0.0) {
-            NSLog(@"BOTTOM");
             _targetY = [self bottomY];
         } else if(_touchDist < 0.0) {
-            NSLog(@"TOP");
             _targetY = [self topY];
         }
     }
